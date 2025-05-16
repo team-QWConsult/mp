@@ -1,0 +1,49 @@
+import React from "react";
+import Nav from "../../components/Nav";
+import Link from "next/link";
+import { Layers, Plus, Settings } from "react-feather";
+import Breadcrumbs from "../../components/widgets/Breadcrumbs";
+import Footer from "../../components/Footer";
+
+export default function Dashboard() {
+  return (
+    <main className="bg-gray-200">
+      <Nav />
+      <Breadcrumbs
+        title="Dashboard"
+        breadcrumbs={[{ title: "Home", link: "/" }]}
+      />
+      <div className="container my-4 grid md:grid-cols-4 gap-4">
+        <Link
+          href="/dashboard/listings"
+          className="h-[200px] rounded bg-white p-4 flex items-center justify-center hover:ring"
+        >
+          <div className="text-center">
+            <Layers className="h-12 w-auto inline-block mb-3" />
+            <span className="block w-full">Listings</span>
+          </div>
+        </Link>
+        <Link
+          href="/dashboard/listings/new"
+          className="h-[200px] rounded bg-white p-4 flex items-center justify-center hover:ring"
+        >
+          <div className="text-center">
+            <Plus className="h-12 w-auto inline-block mb-3" />
+            <span className="block w-full">Add Listings</span>
+          </div>
+        </Link>
+        <Link
+          href="/admin/index.html"
+          target="__blank"
+          className="h-[200px] rounded bg-white p-4 flex items-center justify-center hover:ring"
+        >
+          <div className="text-center">
+            <Settings className="h-12 w-auto inline-block mb-3" />
+            <span className="block w-full">Website Settings</span>
+          </div>
+        </Link>
+      </div>
+      <Footer />
+    </main>
+  );
+}
