@@ -86,7 +86,9 @@ const EditListing = ({ listing = {} }) => {
             </h2>
             <span className="text-lg">
               {listing.price_unit}{" "}
-              {listing.sale_price ? listing.sale_price.toLocaleString() : "-"}
+              {listing.offer === "sale"
+                ? (listing.sale_price || 0).toLocaleString()
+                : (listing.rent_price || 0).toLocaleString()}
             </span>
 
             <div className="mt-6 flex gap-4 items-center flex-wrap">

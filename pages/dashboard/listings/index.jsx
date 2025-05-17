@@ -70,7 +70,10 @@ export default function ListingsPage() {
                 <div>
                   <h3 className="mb-2 font-bold">{i.marketing_title}</h3>
                   <span className="block mb-2">
-                    KSH {(i.sale_price || 0).toLocaleString()}
+                    KSH{" "}
+                    {i.offer === "sale"
+                      ? (i.sale_price || 0).toLocaleString()
+                      : (i.rent_price || 0).toLocaleString()}
                   </span>
                   <div className="flex items-center gap-4">
                     <button className="flex items-center p-2 px-6 rounded-full border gap-3">

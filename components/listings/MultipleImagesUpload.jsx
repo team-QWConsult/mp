@@ -5,7 +5,7 @@ const MultipleImagesUpload = ({ form, field }) => {
   const [images, setImages] = useState(field.value);
   const [loading, setLoading] = useState(false);
   const [imgError, setImgError] = useState(false);
-  const maxUploads = 20;
+  const maxUploads = 30;
 
   const resizeImage = (file, maxWidth) => {
     return new Promise((resolve) => {

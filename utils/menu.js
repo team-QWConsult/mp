@@ -1,7 +1,7 @@
 export const servicesLinks = [
   {
-    title: "Buying",
-    link: "/services/buying",
+    title: "Letting",
+    link: "/services/letting",
   },
   { title: "Selling", link: "/services/selling" },
   { title: "Consultation", link: "/services/investment" },
