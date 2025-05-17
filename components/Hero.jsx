@@ -65,10 +65,10 @@ const Hero = () => {
       <div className="w-full absolute left-0 top-0 bottom-0 bg-black/40 flex flex-col justify-center">
         <div className="container w-full">
           <div className="max-w-7xl mx-auto">
-            <h1 className="font-bold font-serif mb-4 max-w-3xl mx-auto text-center text-4xl md:text-4xl lg:text-5xl text-white">
+            <h1 className="font-bold font-serif mb-4 max-w-3xl mx-auto text-center text-2xl md:text-4xl lg:text-5xl text-white">
               {attributes.title}
             </h1>
-            <p className="text-center text-xl mx-auto max-w-3xl text-white">
+            <p className="text-center text-base md:text-xl mx-auto max-w-3xl text-white">
               {attributes.heroCopy}
             </p>
           </div>

@@ -16,7 +16,7 @@ const Footer = () => {
         target="_blank"
         rel="noopener noreferrer"
         href={`https://wa.me/${data.phone.replaceAll(" ", "")}`}
-        className="w-16 h-16 rounded-full z-[100] bg-green-500 flex items-center justify-center fixed left-5 bottom-5"
+        className="w-16 h-16 rounded-full z-[100] bg-green-500 flex items-center justify-center fixed right-5 bottom-5"
       >
         <WhatsAppIcon className="h-11 w-auto fill-white" />
       </a>

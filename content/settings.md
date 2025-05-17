@@ -3,8 +3,8 @@ siteName: Mapema Properties
 email: info@mapemaproperties.com
 email2: ""
 siteUrl: www.mapemaproperties.com
-phone: "+254 722 854439"
-phone2: "+254 727 136014"
+phone: "+254722854439"
+phone2: "+254727136014"
 address: Nairobi, Kenya.
 facebook: https://web.facebook.com/people/Mapema-Properties/100063695016552/?_rdc=1&_rdr
 tiktok: https://www.tiktok.com/@mapema_properties
