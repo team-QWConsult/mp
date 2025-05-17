@@ -218,7 +218,7 @@ const EditListing = ({ listing = {} }) => {
                   <label className="col-2">
                     Address
                     <Field
-                      name="address"
+                      name="locality"
                       className="add-property__form-region"
                       component={SelectField}
                       options={(values.town_suburb
@@ -230,7 +230,7 @@ const EditListing = ({ listing = {} }) => {
                       }))}
                     />
                     <ErrorMessage
-                      name="address"
+                      name="locality"
                       component="div"
                       className="color--error"
                     />

@@ -90,7 +90,9 @@ export async function listingsAPI(req) {
     if (query.address) {
       listings = listings.filter((i) =>
         _.includes(
-          `${i.region}${i.town_suburb || ""}${i.address || ""}`
+          `${i.region}${i.town_suburb || ""}${i.address || ""}${
+            i.locality || ""
+          }`
             .toLocaleLowerCase()
             .replaceAll(" ", ""),
           query.address.replaceAll(" ", "").toLowerCase()
