@@ -1,6 +1,6 @@
 ---
 siteName: Mapema Properties
-email: info@mapemaproperties.co.ke
+email: mapemaproperties4@gmail.com
 email2: ""
 siteUrl: www.mapemaproperties.com
 phone: "+254722854439"
