@@ -5,6 +5,11 @@ import { ChevronDown } from "react-feather";
 import { objectToGetParams } from "../utils/objectToGetParams";
 import { propertyTypes } from "./constants";
 import { attributes as locationData } from "../content/locations.md";
+import {
+  getAllCountries,
+  getAreas,
+  getSubCounties,
+} from "../lib/getLocationOptions";
 
 export default function SearchForm() {
   const router = useRouter();
@@ -43,7 +48,7 @@ export default function SearchForm() {
                     md:col-span-4
                   "
                 name="searchString"
-                placeholder="Search property name"
+                placeholder="Search property name or location..."
               />
               <Field
                 className="
@@ -55,12 +60,59 @@ export default function SearchForm() {
                     focus:border-primary focus:bg-white focus:ring-0
                   
                   "
-                name="location"
+                name="region"
                 as="select"
-                placeholder="Property Location"
+                placeholder="Property Region"
               >
-                <option value="">Choose Location</option>
-                {locationData.allLocations.map((o) => (
+                <option value="">Choose Region</option>
+                {getAllCountries().map((o) => (
+                  <option key={o} value={o}>
+                    {o}
+                  </option>
+                ))}
+              </Field>
+              <Field
+                className="
+                    block
+                    w-full
+                    
+                    bg-gray-100
+                    border-transparent
+                    focus:border-primary focus:bg-white focus:ring-0
+                  
+                  "
+                name="town_suburb"
+                as="select"
+                placeholder="Property Town"
+              >
+                <option value="">Choose Town</option>
+                {(values.region ? getSubCounties(values.region) : []).map(
+                  (o) => (
+                    <option key={o} value={o}>
+                      {o}
+                    </option>
+                  )
+                )}
+              </Field>
+              <Field
+                className="
+                    block
+                    w-full
+                    
+                    bg-gray-100
+                    border-transparent
+                    focus:border-primary focus:bg-white focus:ring-0
+                  
+                  "
+                name="address"
+                as="select"
+                placeholder="Property Locality"
+              >
+                <option value="">Choose Locality</option>
+                {(values.town_suburb
+                  ? getAreas(values.region, values.town_suburb)
+                  : []
+                ).map((o) => (
                   <option key={o} value={o}>
                     {o}
                   </option>
@@ -129,32 +181,44 @@ export default function SearchForm() {
                 ))}
                 <option value={5}>5+</option>
               </Field>
-
-              <div
-                className={`overflow-hidden grid col-span-2 md:grid-cols-4 md:col-span-4 transition-all duration-300 gap-2 ${
-                  showMore ? "max-h-[1000px]" : "max-h-0"
-                }`}
-              >
-                <Field
-                  className="
+              <Field
+                className="
                     block
                     w-full                    
                     bg-gray-100
                     border-transparent
                     focus:border-primary focus:bg-white focus:ring-0                  
                   "
-                  name="bathroom_count"
-                  as="select"
-                  placeholder="Bathrooms"
-                >
-                  <option value="">Bathrooms</option>
-                  {[1, 2, 3, 4].map((o) => (
-                    <option key={o} value={o}>
-                      {o}
-                    </option>
-                  ))}
-                  <option value={5}>5+</option>
-                </Field>
+                name="bathroom_count"
+                as="select"
+                placeholder="Bathrooms"
+              >
+                <option value="">Bathrooms</option>
+                {[1, 2, 3, 4].map((o) => (
+                  <option key={o} value={o}>
+                    {o}
+                  </option>
+                ))}
+                <option value={5}>5+</option>
+              </Field>
+              <Field
+                type="number"
+                className="
+                    block
+                    w-full
+                    bg-gray-100
+                    border-transparent
+                    focus:border-primary focus:bg-white focus:ring-0
+                  "
+                name="max_price"
+                placeholder="Max Price"
+              />
+
+              <div
+                className={`overflow-hidden grid col-span-2 md:grid-cols-4 md:col-span-4 transition-all duration-300 gap-2 ${
+                  showMore ? "max-h-[1000px]" : "max-h-0"
+                }`}
+              >
                 <Field
                   type="number"
                   className="
@@ -167,18 +231,7 @@ export default function SearchForm() {
                   name="min_price"
                   placeholder="Min Price"
                 />
-                <Field
-                  type="number"
-                  className="
-                    block
-                    w-full
-                    bg-gray-100
-                    border-transparent
-                    focus:border-primary focus:bg-white focus:ring-0
-                  "
-                  name="max_price"
-                  placeholder="Max Price"
-                />
+
                 <Field
                   className="
                     block

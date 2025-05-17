@@ -2,12 +2,13 @@ import Head from "next/head";
 import PageLoading from "../components/widgets/PageLoading";
 import "../styles/globals.css";
 import Script from "next/script";
+import { attributes as settings } from "../content/settings.md";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Anne Properties</title>
+        <title>{settings.siteName}</title>
         <link
           rel="icon"
           type="image/png"

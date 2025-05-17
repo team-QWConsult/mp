@@ -8,10 +8,19 @@ import MenuIcon from "./widgets/MenuIcon";
 
 import { attributes as data } from "../content/settings.md";
 import TiktokIcon from "./widgets/TiktokIcon";
+import Modal from "./widgets/Modal";
+import LocationSelector from "./LocationSelector";
 
 const Nav = () => {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showLocationDropDown, setShowLocationDropDown] = useState(false);
+
+  useEffect(() => {
+    setShowLocationDropDown(false);
+
+    return () => {};
+  }, [router.asPath]);
 
   const toggleMenu = () => {
     if (menuOpen) {
@@ -134,7 +143,7 @@ const Nav = () => {
                 <img
                   className="h-[80px] w-auto"
                   src="/logo.png"
-                  alt="Anne Properties logo"
+                  alt={data.siteName}
                 />
               </Link>
               {/* Links */}
@@ -153,21 +162,31 @@ const Nav = () => {
                 </Link>
 
                 <div className="group relative w-full md:w-auto">
+                  <button
+                    onClick={() =>
+                      setShowLocationDropDown(!showLocationDropDown)
+                    }
+                    className="flex items-center mx-4 h-[100px] box-border md:group-hover:border-t-4 group-hover:border-t-gold group-hover:text-gold"
+                  >
+                    <span className="text-base ">Locations</span>
+                  </button>
+                </div>
+                <div className="group relative w-full md:w-auto">
                   <Link
                     href="/properties"
                     className="flex items-center mx-4 h-[100px] box-border md:group-hover:border-t-4 group-hover:border-t-gold group-hover:text-gold"
                   >
-                    <span className="text-base ">Locations</span>
+                    <span className="text-base ">For Rent</span>
                     <ChevronDown className="ml-2 group-hover:rotate-180 duration-300" />
                   </Link>
                   <div className="block md:hidden group-hover:block md:absolute bg-white rounded w-full md:w-[280px] md:max-h-[450px] overflow-y-auto z-20 md:shadow-lg">
-                    {locationsLinks.map((i) => (
+                    {propertiesLinks.map((i) => (
                       <Link
-                        key={i.title}
-                        href={`/properties-for-sale-in-${i.slug}`}
+                        key={`${i.title}-rent`}
+                        href={`/${i.slug}-for-rent`}
                         className="text-base p-4 flex items-center text-black hover:bg-primary hover:text-white"
                       >
-                        <span>{i.title}</span>
+                        <span>{i.title} for rent</span>
                       </Link>
                     ))}
                   </div>
@@ -177,7 +196,7 @@ const Nav = () => {
                     href="/properties"
                     className="flex items-center mx-4 h-[100px] box-border md:group-hover:border-t-4 group-hover:border-t-gold group-hover:text-gold"
                   >
-                    <span className="text-base ">Properties</span>
+                    <span className="text-base ">For Sale</span>
                     <ChevronDown className="ml-2 group-hover:rotate-180 duration-300" />
                   </Link>
                   <div className="block md:hidden group-hover:block md:absolute bg-white rounded w-full md:w-[280px] md:max-h-[450px] overflow-y-auto z-20 md:shadow-lg">
@@ -239,6 +258,12 @@ const Nav = () => {
           </div>
         </div>
       </nav>
+      <Modal
+        isOpen={showLocationDropDown}
+        onClose={() => setShowLocationDropDown(false)}
+      >
+        <LocationSelector />
+      </Modal>
     </>
   );
 };

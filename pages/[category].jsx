@@ -24,11 +24,12 @@ export default function ListingListPage({ listings, totalCount }) {
   const [showSearchForm, setShowSearchForm] = useState(false);
 
   const pageDetails = getQueryFromUrl(router.query.category);
+  console.log(pageDetails);
   const { propertyTypeQuery, offerQuery, locationQuery } = pageDetails;
 
   const topLinks = createTopLinks(
     offerQuery !== "NONE" ? offerQuery : null,
-    locationQuery !== "NONE" ? locationQuery : null
+    locationQuery !== "NONE" ? locationQuery.replaceAll("_", " ") : null
   );
 
   let c = `${upperFirst(propertyTypeQuery)}${
@@ -50,10 +51,10 @@ export default function ListingListPage({ listings, totalCount }) {
       <SEO title={pageTitle} description={description} slug={router.asPath} />
       <Breadcrumbs title={pageTitle} breadcrumbs={pl} />
       <section
-        className="h-[160px] bg-cover bg-no-repeat bg-[50%_70%] relative"
+        className="min-h-[160px] bg-cover bg-no-repeat bg-[50%_70%] relative"
         style={{ backgroundImage: `url(${backgroundImg})` }}
       >
-        <div className="absolute inset-0 bg-slate-800/50 py-6">
+        <div className="min-h-[160px] inset-0 bg-slate-800/50 py-6">
           <div className="container">
             <h1 className="font-bold font-serif uppercase">
               <span className="text-2xl md:text-4xl text-white/70 block mb-2">
