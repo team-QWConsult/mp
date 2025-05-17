@@ -39,11 +39,12 @@ export default function AgentCard({
             </button>
           )}
         </div>
-        <div className="w-[100px] h-[100px] mx-auto rounded-full flex items-center justify-center text-white bg-slate-700">
-          <span className="font-bold text-3xl uppercase">
-            {settings.siteName[0]}
-          </span>
-        </div>
+        <img
+          alt="Mapema properties"
+          src="/logo.png"
+          className="w-[100px] h-[100px] object-cover mx-auto rounded-full flex items-center justify-center text-white bg-slate-700"
+        />
+
         <div className="mt-4">
           <h3 className="text-xl font-bold text-center mb-4">
             {settings.siteName}
