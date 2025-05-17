@@ -7,10 +7,20 @@
         "constituency_name": "Westlands",
         "wards": [
           "Kitisuru",
-          "Parklands/Highridge",
+          "Parklands",
+          "Highridge",
+          "Runda",
+          "Gigiri",
+          "Muthaiga North",
+          "Rosslyn",
           "Karura",
           "Kangemi",
-          "Mountain View"
+          "Waruku",
+          "Mountain View Estate",
+          "Uthiru",
+          "Kabete",
+          "New Kitisuru",
+          "Lower Kabete"
         ]
       },
       {
@@ -208,66 +218,74 @@
     "constituencies": [
       {
         "constituency_name": "Gatundu North",
-        "wards": ["Gituamba", "Githobokoni", "Chania", "Mang’u"]
-      },
-      {
-        "constituency_name": "Gatundu South",
-        "wards": ["Kiamwangi", "Kiganjo", "Ndarugu", "Ngenda"]
-      },
-      {
-        "constituency_name": "Githunguri",
-        "wards": ["Githunguri", "Githiga", "Ikinu", "Ngewa", "Komothai"]
-      },
-      {
-        "constituency_name": "Juja",
-        "wards": ["Murera", "Theta", "Juja", "Witeithie", "Kalimoni"]
-      },
-      {
-        "constituency_name": "Kabete",
-        "wards": ["Gitaru", "Muguga", "Nyathuna", "Kabete", "Uthiru"]
-      },
-      {
-        "constituency_name": "Kiambaa",
-        "wards": ["Cianda", "Karuiri", "Ndenderu", "Muchatha", "Kihara"]
-      },
-      {
-        "constituency_name": "Kiambu",
-        "wards": ["Ting’gang’a", "Ndumberi", "Riabai", "Township"]
-      },
-      {
-        "constituency_name": "Limuru",
         "wards": [
-          "Bibirioni",
-          "Limuru Central",
-          "Ndeiya",
-          "Limuru East",
-          "Ngecha Tigoni"
+          "Gituamba",
+          "Kanyoni",
+          "Githobokoni",
+          "Makwa",
+          "Chania",
+          "Kagwe",
+          "Mang’u",
+          "Ngenda Farm"
         ]
       },
       {
-        "constituency_name": "Kikuyu",
-        "wards": ["Karai", "Nachu", "Sigona", "Kikuyu", "Kinoo"]
+        "constituency_name": "Gatundu South",
+        "wards": [
+          "Kiamwangi",
+          "Gachika",
+          "Kiganjo",
+          "Gathage",
+          "Ndarugu",
+          "Mutomo",
+          "Ngenda",
+          "Ichaweri"
+        ]
       },
       {
-        "constituency_name": "Lari",
-        "wards": ["Kijabe", "Nyanduma", "Kamburu", "Lari/Kirenga"]
+        "constituency_name": "Juja",
+        "wards": [
+          "Murera",
+          "Toll Station",
+          "Maziwa",
+          "Theta",
+          "Juja Town",
+          "Witeithie",
+          "Ndarugo",
+          "Kalimoni",
+          "Mirimaini"
+        ]
+      },
+      {
+        "constituency_name": "Kiambaa",
+        "wards": [
+          "Cianda",
+          "Ndumberi",
+          "Karuiri",
+          "Kawaida",
+          "Ndenderu",
+          "Muchatha",
+          "Banana",
+          "Ruaka",
+          "Kihara"
+        ]
       },
       {
         "constituency_name": "Ruiru",
         "wards": [
           "Gitothua",
+          "Kamakis",
           "Biashara",
+          "Gwa Kairu",
           "Gatongora",
+          "Matangi",
           "Kahawa Sukari",
           "Kahawa Wendani",
           "Kiuu",
+          "Mwalimu Farm",
           "Mwiki",
           "Mwihoko"
         ]
-      },
-      {
-        "constituency_name": "Thika Town",
-        "wards": ["Township", "Kamenu", "Hospital", "Gatuanyaga", "Ngoliba"]
       }
     ]
   },
@@ -443,7 +461,10 @@
           "Ildamat",
           "Dalalekutuk",
           "Matapato North",
-          "Matapato South"
+          "Matapato South",
+          "Kajiado Town",
+          "Il Bissil",
+          "Namanga"
         ]
       },
       {
@@ -451,23 +472,40 @@
         "wards": [
           "Kaputiei North",
           "Kitengela",
+          "Milimani",
+          "New Valley",
           "Oloosirkon/Sholinke",
           "Kenyawa-Poka",
-          "Imaroro"
+          "Imaroro",
+          "Acacia",
+          "Yukos"
         ]
       },
       {
         "constituency_name": "Kajiado North",
-        "wards": ["Olkeri", "Ongata Rongai", "Nkaimurunya", "Oloolua", "Ngong"]
+        "wards": [
+          "Olkeri",
+          "Ongata Rongai",
+          "Nkaimurunya",
+          "Oloolua",
+          "Ngong",
+          "Kware",
+          "Rimpa",
+          "Karen Plains",
+          "Nkoroi"
+        ]
       },
       {
         "constituency_name": "Kajiado West",
         "wards": [
-          "  Keekonyokie",
+          "Keekonyokie",
           "Iloodokilani",
           "Magadi",
           "Ewuaso Oonkidong’i",
-          "Mosiro"
+          "Mosiro",
+          "Kiserian",
+          "Oltepesi",
+          "Corner Baridi"
         ]
       },
       {
@@ -477,7 +515,11 @@
           "Mbirikani/Eselen",
           "Keikuku",
           "Rombo",
-          "Kimana"
+          "Kimana",
+          "Loitokitok",
+          "Oloitokitok Town",
+          "Ilasit",
+          "Entarara"
         ]
       }
     ]
