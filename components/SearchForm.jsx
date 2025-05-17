@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from "formik";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { ChevronDown } from "react-feather";
+import { ChevronDown, RotateCcw } from "react-feather";
 import { objectToGetParams } from "../utils/objectToGetParams";
 import { propertyTypes } from "./constants";
 import { attributes as locationData } from "../content/locations.md";
@@ -21,6 +21,9 @@ export default function SearchForm() {
         <Formik
           initialValues={{
             searchString: "",
+            region: "",
+            town_suburb: "",
+            address: "",
           }}
           enableReinitialize
           onSubmit={async (values) => {
@@ -33,7 +36,14 @@ export default function SearchForm() {
             router.push(`/property-search?${objectToGetParams(searchKeys)}`);
           }}
         >
-          {({ isSubmitting, dirty, setFieldValue, values, errors }) => (
+          {({
+            isSubmitting,
+            dirty,
+            setFieldValue,
+            values,
+            errors,
+            resetForm,
+          }) => (
             <Form className="text-black/80 grid grid-cols-2 md:grid-cols-4 gap-2">
               <Field
                 type="text"
@@ -263,16 +273,28 @@ export default function SearchForm() {
               >
                 Search{" "}
               </button>
-              <button
-                onClick={() => setShowMore(!showMore)}
-                type="button"
-                className="col-span-2 md:col-span-4 text-gold text-sm font-bold uppercase flex items-center w-full justify-between"
-              >
-                <span>{showMore ? "Less Filters" : "More Filters"}</span>
-                <ChevronDown
-                  className={`h-5 ${showMore && "rotate-180"} transition-all`}
-                />
-              </button>
+              <div className="flex gap-4 flex-wrap col-span-2">
+                <button
+                  onClick={() => setShowMore(!showMore)}
+                  type="button"
+                  className="gap-2 text-gold text-sm font-bold uppercase flex items-center justify-between"
+                >
+                  <span>{showMore ? "Less Filters" : "More Filters"}</span>
+                  <ChevronDown
+                    className={`h-5 ${showMore && "rotate-180"} transition-all`}
+                  />
+                </button>
+                <button
+                  onClick={() => resetForm()}
+                  type="button"
+                  className="gap-2 group text-gold text-sm font-bold uppercase flex items-center justify-between"
+                >
+                  <span>Reset Form</span>
+                  <RotateCcw
+                    className={`h-4 w-auto group-hover:-rotate-180 transition-all`}
+                  />
+                </button>
+              </div>
             </Form>
           )}
         </Formik>

@@ -1,5 +1,5 @@
 import { NEXT_PUBLIC_TEAM_ID, SITE_URL } from "./constants";
-import _ from "lodash";
+import _, { includes, kebabCase } from "lodash";
 
 export async function listingsAPI(req) {
   try {
@@ -14,7 +14,16 @@ export async function listingsAPI(req) {
 
     // filter by region
     if (query.region) {
-      listings = listings.filter((i) => i.region === query.region);
+      listings = listings.filter((i) =>
+        includes(kebabCase(i.region), kebabCase(query.region))
+      );
+    }
+
+    // filter by town
+    if (query.town_suburb) {
+      listings = listings.filter((i) =>
+        includes(kebabCase(i.town_suburb), kebabCase(query.town_suburb))
+      );
     }
 
     // filter by propertyType
@@ -78,13 +87,13 @@ export async function listingsAPI(req) {
     }
 
     // search by location
-    if (query.location) {
+    if (query.address) {
       listings = listings.filter((i) =>
         _.includes(
           `${i.region}${i.town_suburb || ""}${i.address || ""}`
             .toLocaleLowerCase()
             .replaceAll(" ", ""),
-          query.location.replaceAll(" ", "").toLowerCase()
+          query.address.replaceAll(" ", "").toLowerCase()
         )
       );
     }
