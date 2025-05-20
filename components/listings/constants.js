@@ -1,4 +1,4 @@
-import { includes } from "lodash";
+import { find, includes, snakeCase } from "lodash";
 import * as yup from "yup";
 
 export const validationSchema = yup.object({
@@ -51,7 +51,97 @@ export const propertyCategories = [
   "Farm",
   "Commercial Property",
   "Industrial Property",
+  "Joint Venture (JV)",
+  "Off-Plan Projects",
+  "Foreclosure/Distress Property",
+  "Auction Properties",
+  "Rental Income Property",
+  "Serviced/Managed Property",
+  "Maisonette",
+  "Mansion",
+  "Single-Family House",
+  "Bedsitter",
+  "Studio",
+  "Serviced Apartment",
+  "Office Space",
+  "Retail Space/Shop",
+  "Hotel/Guesthouse",
+  "Restaurant Space",
+  "Warehouse/Go-down",
+  "Showroom",
+  "Mixed-Use Development",
+  "Residential Plot",
+  "Commercial Plot",
+  "Agricultural/Farm Land",
 ];
+
+export const propertyCategoriesWithSubCategories = [
+  {
+    type: "House",
+    subCategories: [
+      "Bungalow",
+      "Maisonette",
+      "Townhouse",
+      "Villa",
+      "Mansion",
+      "Single-Family House",
+    ],
+  },
+  {
+    type: "Apartment",
+    subCategories: [
+      "Apartment",
+      "Bedsitter",
+      "Studio",
+      "Duplex",
+      "Serviced Apartment",
+    ],
+  },
+  {
+    type: "Commercial Property",
+    subCategories: [
+      "Office Space",
+      "Retail Space/Shop",
+      "Hotel/Guesthouse",
+      "Restaurant Space",
+      "Warehouse/Go-down",
+      "Showroom",
+      "Mixed-Use Development",
+    ],
+  },
+  {
+    type: "Land/Plot",
+    subCategories: [
+      "Residential Plot",
+      "Commercial Plot",
+      "Agricultural/Farm Land",
+    ],
+  },
+  {
+    type: "Special Categories",
+    subCategories: [
+      "Joint Venture (JV)",
+      "Off-Plan Projects",
+      "Foreclosure/Distress Property",
+      "Auction Properties",
+      "Rental Income Property",
+      "Serviced/Managed Property",
+    ],
+  },
+];
+
+export function getPropertyCategories() {
+  return propertyCategoriesWithSubCategories.map((i) => i.type);
+}
+
+export function getSubCategories(category) {
+  return (
+    find(
+      propertyCategoriesWithSubCategories,
+      (c) => snakeCase(c.type) === snakeCase(category)
+    )?.subCategories || []
+  );
+}
 
 // Price Units
 export const priceUnitsOptions = ["KSH", "USD"];

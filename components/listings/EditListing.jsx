@@ -15,6 +15,8 @@ import {
   sizeUnitOptions,
   validationSchema,
   initialValues,
+  getPropertyCategories,
+  getSubCategories,
 } from "./constants";
 
 import { useRouter } from "next/router";
@@ -257,13 +259,31 @@ const EditListing = ({ listing = {} }) => {
                     <Field
                       name="property_type"
                       component={SelectField}
-                      options={propertyCategories.map((i) => ({
+                      options={getPropertyCategories().map((i) => ({
                         label: i,
                         value: snakeCase(i),
                       }))}
                     />
                     <ErrorMessage
                       name="property_type"
+                      component="div"
+                      className="color--error"
+                    />
+                  </label>
+                  <label>
+                    Sub Type
+                    <Field
+                      name="property_sub_type"
+                      component={SelectField}
+                      options={getSubCategories(values.property_type).map(
+                        (i) => ({
+                          label: i,
+                          value: snakeCase(i),
+                        })
+                      )}
+                    />
+                    <ErrorMessage
+                      name="property_sub_type"
                       component="div"
                       className="color--error"
                     />
