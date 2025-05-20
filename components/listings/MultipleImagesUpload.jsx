@@ -89,8 +89,8 @@ const MultipleImagesUpload = ({ form, field }) => {
   };
 
   const uploadToCloudinary = async (base64Image) => {
-    const cloudName = "dgzn75ubf";
-    const uploadPreset = "anne-properties";
+    const cloudName = "duvicaxnf";
+    const uploadPreset = "mapema-propertis";
     const formData = new FormData();
 
     formData.append("file", base64Image);
