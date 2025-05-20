@@ -189,7 +189,8 @@
   align-items: flex-end;
 }
 
-.add-property__form input,
+.add-property__form input[type="text"],
+.add-property__form input[type="number"],
 .add-property__form textarea {
   width: 100%;
   margin-top: 6px;

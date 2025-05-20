@@ -171,6 +171,7 @@ const EditListing = ({ listing = {} }) => {
                 values,
                 initialValues: originalValues,
                 dirty,
+                setFieldValue,
               }) => (
                 <Form className="add-property__form">
                   <SectionTitle
@@ -380,17 +381,32 @@ const EditListing = ({ listing = {} }) => {
                     />
                   </label>
 
-                  <label>
-                    Features
-                    <Field
-                      name="features"
-                      component={MultiSelect}
-                      options={popularFeatures.map((i) => ({
-                        label: i,
-                        value: i,
-                      }))}
-                    />
-                  </label>
+                  <h4 className="font-bold mb-4 text-lg">Features</h4>
+                  <div className="w-full flex flex-wrap gap-4 p-4 border border-dashed rounded">
+                    {popularFeatures.map((feature) => (
+                      <label
+                        key={feature}
+                        className="inline-flex items-center gap-4 rounded border p-2 text-sm !w-auto !mb-0 ring-1 ring-transparent hover:bg-slate-100 has-[:checked]:bg-indigo-50 has-[:checked]:text-indigo-900 has-[:checked]:ring-indigo-500"
+                      >
+                        <input
+                          onChange={(e) => {
+                            const updatedFeatures = e.target.checked
+                              ? [...values.features, feature]
+                              : values.features.filter((r) => r !== feature);
+                            setFieldValue("features", updatedFeatures);
+                          }}
+                          className="form-checkbox rounded"
+                          type="checkbox"
+                          name="features"
+                          key={feature}
+                          value={feature}
+                          checked={values.features.includes(feature)}
+                        />
+
+                        <span>{feature}</span>
+                      </label>
+                    ))}
+                  </div>
 
                   <SectionTitle
                     number={4}
