@@ -147,7 +147,14 @@ export function getSubCategories(category) {
 export const priceUnitsOptions = ["KSH", "USD"];
 
 // Payment Terms
-export const paymentTermsOptions = ["monthly", "daily", "quaterly", "yearly"];
+export const paymentTermsOptions = [
+  "monthly",
+  "daily",
+  "quaterly",
+  "yearly",
+  "per sqm",
+  "per sqm",
+];
 
 // size Units
 export const sizeUnitOptions = ["acres", "ha"];

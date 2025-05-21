@@ -44,6 +44,17 @@ const EditListing = ({ listing = {} }) => {
   const router = useRouter();
   const isEditMode = Object.keys(listing).length > 0;
 
+  function formatNumber(value) {
+    if (!value) return "";
+    const number = parseFloat(value.replace(/,/g, ""));
+    if (isNaN(number)) return "";
+    return number.toLocaleString();
+  }
+
+  function parseNumber(value) {
+    return value.replace(/,/g, "");
+  }
+
   const saveListingData = async (data) => {
     setLoading(true);
 
@@ -174,6 +185,7 @@ const EditListing = ({ listing = {} }) => {
                 initialValues: originalValues,
                 dirty,
                 setFieldValue,
+                handleBlur,
               }) => (
                 <Form className="add-property__form">
                   <SectionTitle
@@ -451,11 +463,33 @@ const EditListing = ({ listing = {} }) => {
                     hidden={values.offer === "sale" || values.offer === ""}
                   >
                     Renting Price
-                    <Field
+                    {/* <Field
                       type="number"
                       name="rent_price"
                       placeholder="Price"
-                    />
+                    /> */}
+                    <Field name="rent_price">
+                      {({ field }) => (
+                        <input
+                          {...field}
+                          value={
+                            values?.rent_price_formated ||
+                            formatNumber(values.rent_price)
+                          }
+                          type="text"
+                          onChange={(e) => {
+                            const raw = parseNumber(e.target.value);
+                            if (/^\d*$/.test(raw)) {
+                              setFieldValue("rent_price", raw); // unformatted value
+                              setFieldValue(
+                                "rent_price_formated",
+                                formatNumber(raw)
+                              ); // formatted display
+                            }
+                          }}
+                        />
+                      )}
+                    </Field>
                     <ErrorMessage
                       name="rent_price"
                       component="div"
@@ -468,11 +502,33 @@ const EditListing = ({ listing = {} }) => {
                     hidden={values.offer === "rent" || values.offer === ""}
                   >
                     Sale Price
-                    <Field
+                    {/* <Field
                       type="number"
                       name="sale_price"
                       placeholder="Price"
-                    />
+                    /> */}
+                    <Field name="sale_price">
+                      {({ field }) => (
+                        <input
+                          {...field}
+                          value={
+                            values?.sale_price_formated ||
+                            formatNumber(values.sale_price)
+                          }
+                          type="text"
+                          onChange={(e) => {
+                            const raw = parseNumber(e.target.value);
+                            if (/^\d*$/.test(raw)) {
+                              setFieldValue("sale_price", raw); // unformatted value
+                              setFieldValue(
+                                "sale_price_formated",
+                                formatNumber(raw)
+                              ); // formatted display
+                            }
+                          }}
+                        />
+                      )}
+                    </Field>
                     <ErrorMessage
                       name="sale_price"
                       component="div"
