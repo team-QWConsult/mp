@@ -207,7 +207,7 @@ const EditListing = ({ listing = {} }) => {
                     <ErrorMessage
                       name="region"
                       component="div"
-                      className="color--error"
+                      className="color--error text-red-500"
                     />
                   </label>
                   <label className="col-2">
@@ -227,7 +227,7 @@ const EditListing = ({ listing = {} }) => {
                     <ErrorMessage
                       name="town_suburb"
                       component="div"
-                      className="color--error"
+                      className="color--error text-red-500"
                     />
                   </label>
                   <label className="col-2">
@@ -247,7 +247,7 @@ const EditListing = ({ listing = {} }) => {
                     <ErrorMessage
                       name="locality"
                       component="div"
-                      className="color--error"
+                      className="color--error text-red-500"
                     />
                   </label>
 
@@ -257,7 +257,7 @@ const EditListing = ({ listing = {} }) => {
                     <ErrorMessage
                       name="address"
                       component="div"
-                      className="color--error"
+                      className="color--error text-red-500"
                     />
                   </label>
                   <SectionTitle
@@ -279,7 +279,7 @@ const EditListing = ({ listing = {} }) => {
                     <ErrorMessage
                       name="property_type"
                       component="div"
-                      className="color--error"
+                      className="color--error text-red-500"
                     />
                   </label>
                   <label>
@@ -297,7 +297,7 @@ const EditListing = ({ listing = {} }) => {
                     <ErrorMessage
                       name="property_sub_type"
                       component="div"
-                      className="color--error"
+                      className="color--error text-red-500"
                     />
                   </label>
                   <label className="col-2">
@@ -310,7 +310,7 @@ const EditListing = ({ listing = {} }) => {
                     <ErrorMessage
                       name="bedroom_count"
                       component="div"
-                      className="color--error"
+                      className="color--error text-red-500"
                     />
                   </label>
                   <label className="col-2">
@@ -323,7 +323,7 @@ const EditListing = ({ listing = {} }) => {
                     <ErrorMessage
                       name="bathroom_count"
                       component="div"
-                      className="color--error"
+                      className="color--error text-red-500"
                     />
                   </label>
                   <label className="col-3">
@@ -336,7 +336,7 @@ const EditListing = ({ listing = {} }) => {
                     <ErrorMessage
                       name="floor_size"
                       component="div"
-                      className="color--error"
+                      className="color--error text-red-500"
                     />
                   </label>
                   <label className="col-1">
@@ -357,7 +357,7 @@ const EditListing = ({ listing = {} }) => {
                     <ErrorMessage
                       name="size"
                       component="div"
-                      className="color--error"
+                      className="color--error text-red-500"
                     />
                   </label>
                   <label className="col-1">
@@ -409,7 +409,7 @@ const EditListing = ({ listing = {} }) => {
                     <ErrorMessage
                       name="garages"
                       component="div"
-                      className="color--error"
+                      className="color--error text-red-500"
                     />
                   </label>
 
@@ -493,7 +493,7 @@ const EditListing = ({ listing = {} }) => {
                     <ErrorMessage
                       name="rent_price"
                       component="div"
-                      className="color--error"
+                      className="color--error text-red-500"
                     />
                   </label>
 
@@ -532,7 +532,7 @@ const EditListing = ({ listing = {} }) => {
                     <ErrorMessage
                       name="sale_price"
                       component="div"
-                      className="color--error"
+                      className="color--error text-red-500"
                     />
                   </label>
 
@@ -574,7 +574,7 @@ const EditListing = ({ listing = {} }) => {
                     <ErrorMessage
                       name="marketing_title"
                       component="div"
-                      className="color--error"
+                      className="color--error text-red-500"
                     />
                   </label>
                   <label>
@@ -588,7 +588,7 @@ const EditListing = ({ listing = {} }) => {
                     <ErrorMessage
                       name="description"
                       component="div"
-                      className="color--error"
+                      className="color--error text-red-500"
                     />
                   </label>
 

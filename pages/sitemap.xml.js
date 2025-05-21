@@ -1,6 +1,7 @@
 //pages/sitemap.xml.js
 import { attributes as data } from "../content/seo.md";
 import { attributes as settings } from "../content/settings.md";
+import { listingsAPI } from "../utils/listingsAPI";
 import { propertiesLinks, quickLinks, servicesLinks } from "../utils/menu";
 import { kebabCase, snakeCase } from "lodash";
 
@@ -119,11 +120,9 @@ function SiteMap() {
 
 export async function getServerSideProps({ res }) {
   // We make an API call to gather the URLs for our site
-  const listingsRes = await fetch(
-    `${process.env.NEXT_PUBLIC_API_DOMAIN}/api/v1/listings?team=${process.env.NEXT_PUBLIC_TEAM_ID}`
-  );
-  const data = await listingsRes.json();
-  const listings = data.listings;
+
+  const listingRes = await listingsAPI({});
+  const listings = listingRes.listings;
 
   // We generate the XML sitemap with the posts data
   const sitemap = generateSiteMap(listings);
