@@ -7,6 +7,7 @@
         "constituency_name": "Westlands",
         "wards": [
           "Kitisuru",
+          "New Kitisuru",
           "Parklands",
           "Highridge",
           "Runda",
@@ -19,13 +20,46 @@
           "Mountain View Estate",
           "Uthiru",
           "Kabete",
-          "New Kitisuru",
-          "Lower Kabete"
+          "Lower Kabete",
+          "Westlands",
+          "Loresho",
+          "Spring Valley",
+          "Peponi",
+          "Brookside",
+          "Kyuna",
+          "Sarakasi Dome Area",
+          "Raphta Road",
+          "General Mathenge",
+          "School Lane",
+          "Muthangari",
+          "Lavington"
         ]
       },
       {
         "constituency_name": "Dagoretti North",
-        "wards": ["Kilimani", "Kawangware", "Gatina", "Kileleshwa", "Kabiro"]
+        "wards": [
+          "Kilimani",
+          "Kawangware",
+          "Gatina",
+          "Kileleshwa",
+          "Lavington",
+          "Kabiro",
+          "Hurlingham Estate",
+          "Woodley Estate",
+          "Maziwa Area",
+          "Muthangari Estate",
+          "Othaya Road Area",
+          "Mandera Road Area",
+          "Gitanga Road Area",
+          "Wanyee Road Area",
+          "Riruta Satellite Area",
+          "Ruthimitu Area",
+          "Gatina Estate",
+
+          "Ndurarua Area",
+
+          "Muslim Area (Kawangware side)"
+        ]
       },
       {
         "constituency_name": "Dagoretti South",
@@ -35,6 +69,31 @@
           "Riruta",
           "Uthiru/Ruthimitu",
           "Waithaka"
+        ]
+      },
+      {
+        "constituency_name": "Karen",
+        "wards": [
+          "Karen Plains",
+          "Hardy",
+          "Bogani",
+          "Lang'ata South",
+          "Miotoni",
+          "Mukoma",
+          "Silanga",
+          "Karen Triangle",
+          "Ngong View Estate",
+          "Kerarapon",
+          "Ololua",
+          "KCB Karen Estate",
+          "Hillcrest",
+          "Mamba Village Area",
+          "Karen End",
+          "Windy Ridge",
+          "Marula Lane",
+          "Warai",
+          "Bomas",
+          "Lang'ata Giraffe Centre Area"
         ]
       },
       {
@@ -454,6 +513,31 @@
     "county_code": 34,
     "county_name": "Kajiado",
     "constituencies": [
+      {
+        "constituency_name": "Ngong",
+        "wards": [
+          "Ngong Town",
+          "Matasia",
+          "Kiserian",
+          "Olepolos",
+          "Oloolua",
+          "Ngong View Estate",
+          "Gataka",
+          "Kimuka",
+          "Kerarapon",
+          "Embulbul",
+          "Nkoroi",
+          "Saila",
+          "Rimpa",
+          "Kibiko",
+          "Bulbul",
+          "Ole Kasasi",
+          "Nyang’ori",
+          "Kandisi",
+          "Ololua Ridge",
+          "Kona Baridi"
+        ]
+      },
       {
         "constituency_name": "Kajiado Central",
         "wards": [
