@@ -24,7 +24,6 @@ export default function ListingListPage({ listings, totalCount }) {
   const [showSearchForm, setShowSearchForm] = useState(false);
 
   const pageDetails = getQueryFromUrl(router.query.category);
-  console.log(pageDetails);
   const { propertyTypeQuery, offerQuery, locationQuery } = pageDetails;
 
   const topLinks = createTopLinks(

@@ -27,6 +27,11 @@ const resultsHandler = async (req, res) => {
       ...data,
     }));
 
+    // order by latest
+    combinedResults = combinedResults.sort(
+      (a, b) => new Date(b.created_at) - new Date(a.created_at)
+    );
+
     if (req.query && req.query.limit) {
       combinedResults = combinedResults.slice(0, parseInt(req.query.limit));
     }
