@@ -154,6 +154,7 @@ export const paymentTermsOptions = [
   "yearly",
   "per sqm",
   "per sqm",
+  "per acre",
 ];
 
 // size Units
