@@ -373,6 +373,37 @@
         ]
       },
       {
+        "constituency_name": "Kiambu Road",
+        "wards": [
+          "Muthaiga",
+          "Muthaiga North",
+          "Garden Estate",
+          "Thome",
+          "Ridgeways",
+          "Runda",
+          "Cianda",
+          "Nyari",
+          "Gigiri",
+          "Rosslyn",
+          "Karura",
+          "Kasarani (bordering on Kiambu Rd side)",
+          "Kahawa West (via northern links)",
+          "Kigwa Ridge",
+          "Five Star Estate",
+          "Edenville Estate",
+          "Tatu City (extended access)",
+          "Migaa Golf Estate",
+          "Peponi",
+          "Kirigiti",
+          "Kiambu Town",
+          "Ting'ang'a",
+          "Ndumberi",
+          "Kanunga",
+          "Muchatha",
+          "Ruaka (via Limuru Rd/Redhill link)"
+        ]
+      },
+      {
         "constituency_name": "Gatundu South",
         "wards": [
           "Kiamwangi",
