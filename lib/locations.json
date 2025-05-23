@@ -220,6 +220,88 @@
       {
         "constituency_name": "Mathare",
         "wards": ["Mlango Kubwa", "Kiamaiko", "Ngei", "Huruma", "Mabatini"]
+      },
+      {
+        "constituency_name": "Ngong Road",
+        "wards": [
+          "Kilimani",
+          "Yaya Area",
+          "Woodley",
+          "Adams Arcade",
+          "Dagoretti Corner",
+          "Jamhuri Estate",
+          "Ngumo",
+          "Racecourse",
+          "Ngong Racecourse Area",
+          "Kibera (Karanja, Silanga, Lindi sections)",
+          "Kileleshwa (Ngong Rd access side)",
+          "Kawangware",
+          "Waithaka",
+          "Riruta",
+          "Satellite",
+          "Lenana",
+          "Karen Plains (Ngong Rd access)",
+          "Hardy (via Karen connection)",
+          "Oloolua",
+          "Kerarapon",
+          "Matasia",
+          "Ngong Town"
+        ]
+      },
+
+      {
+        "constituency_name": "Mombasa Road",
+        "wards": [
+          "South B",
+          "South C",
+          "Bellevue",
+          "Hazina Estate",
+          "Nyayo Highrise",
+          "Mugoya",
+          "Capital Centre Area",
+          "Imara Daima",
+          "Pipeline",
+          "Taj Mall Area",
+          "Embakasi",
+          "Umoja Innercore (via Airport North Rd)",
+          "Donholm",
+          "Tena",
+          "Savannah",
+          "Utawala (extended via Airport North Rd)",
+          "Mlolongo",
+          "Syokimau",
+          "Sabaki",
+          "Katani",
+          "Chaani Court Area",
+          "JKIA Surrounds",
+          "Athi River",
+          "Greenpark Estate",
+          "Kinanie",
+          "Lukenya",
+          "Daystar Area",
+          "Sultan Hamud (further along the corridor)"
+        ]
+      },
+      {
+        "constituency_name": "Naivasha Road",
+        "wards": [
+          "Dagoretti Corner",
+          "Riruta",
+          "Riruta Satellite",
+          "Kilimani (western edge)",
+          "Kawangware",
+          "Uthiru",
+          "Kabiria",
+          "Ndwaru",
+          "Mutuini",
+          "Wangige (accessible via Naivasha–Ndwaru route)",
+          "Waithaka",
+          "Thogoto (via Kikuyu link)",
+          "Kikuyu Town (extended access)",
+          "Muthama Heights",
+          "Maziwa Estate",
+          "Gitanga Road (intersects Naivasha Rd)"
+        ]
       }
     ]
   },
@@ -346,6 +428,44 @@
           "Mwalimu Farm",
           "Mwiki",
           "Mwihoko"
+        ]
+      },
+      {
+        "constituency_name": "Thika Road",
+        "wards": [
+          "Mathare North",
+          "Eastleigh North",
+          "Huruma",
+          "Ziwani",
+          "Starehe",
+          "Mlango Kubwa",
+          "Baba Dogo",
+          "Ruaraka",
+          "Kariobangi North",
+          "Kariobangi South",
+          "Githurai 44",
+          "Githurai 45",
+          "Kahawa West",
+          "Kahawa Wendani",
+          "Kahawa Sukari",
+          "Zimmerman",
+          "Roysambu",
+          "Thome",
+          "Garden Estate",
+          "Safari Park Area",
+          "Marurui",
+          "Kasarani",
+          "Clay City",
+          "Mwiki",
+          "Njiru",
+          "Ruiru",
+          "Membley",
+          "Kimbo",
+          "Balozi Estate",
+          "Kahawa Barracks",
+          "Kahawa Farmers",
+          "Juja",
+          "Thika Town"
         ]
       }
     ]
