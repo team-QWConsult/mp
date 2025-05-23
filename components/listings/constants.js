@@ -152,7 +152,7 @@ export const paymentTermsOptions = [
   "daily",
   "quaterly",
   "yearly",
-  "per sqm",
+  "per sqf",
   "per sqm",
   "per acre",
 ];

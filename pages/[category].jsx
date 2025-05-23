@@ -101,10 +101,10 @@ export default function ListingListPage({ listings, totalCount }) {
       </section>
       <section className="container pb-10">
         <Pagination
-          currentPage={router.query.page || 1}
+          currentPage={router.query.page ? parseInt(router.query.page) : 1}
           pathPrefix={"/" + router.query.category}
           postsPerPage={12}
-          totalPages={Math.ceil(totalCount / 12)}
+          totalPosts={totalCount}
         />
       </section>
       <section className="py-6 bg-gray-200">
