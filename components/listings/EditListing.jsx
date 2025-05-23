@@ -17,6 +17,7 @@ import {
   initialValues,
   getPropertyCategories,
   getSubCategories,
+  offerOptions,
 } from "./constants";
 
 import { useRouter } from "next/router";
@@ -450,7 +451,7 @@ const EditListing = ({ listing = {} }) => {
                     <Field
                       name="offer"
                       component={SelectField}
-                      options={["rent", "sale"].map((i) => ({
+                      options={offerOptions.map((i) => ({
                         label: upperFirst(i),
                         value: i,
                       }))}
@@ -601,6 +602,20 @@ const EditListing = ({ listing = {} }) => {
                     Upload Images
                     <Field name="images" component={MultipleImagesUpload} />
                   </div>
+
+                  <label>
+                    Video Link
+                    <Field
+                      type="text"
+                      name="video_link"
+                      placeholder="Video Link"
+                    />
+                    <ErrorMessage
+                      name="video_link"
+                      component="div"
+                      className="color--error text-red-500"
+                    />
+                  </label>
 
                   <button
                     className="p-4 rounded w-full bg-primary text-white"

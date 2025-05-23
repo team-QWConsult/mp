@@ -144,7 +144,7 @@ export function getSubCategories(category) {
 }
 
 // Price Units
-export const priceUnitsOptions = ["KSH", "USD"];
+export const priceUnitsOptions = ["KSH", "USD", "EUR"];
 
 // Payment Terms
 export const paymentTermsOptions = [
@@ -159,6 +159,9 @@ export const paymentTermsOptions = [
 
 // size Units
 export const sizeUnitOptions = ["acres", "ha"];
+
+// offer options
+export const offerOptions = ["sale", "rent", "lease", "shortlet"];
 
 // floor size units
 export const floorSizeUnitOptions = ["sqf", "sqm"];
