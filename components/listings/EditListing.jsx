@@ -500,7 +500,12 @@ const EditListing = ({ listing = {} }) => {
 
                   <label
                     className="col-3"
-                    hidden={values.offer === "rent" || values.offer === ""}
+                    hidden={
+                      values.offer === "rent" ||
+                      values.offer === "lease" ||
+                      values.offer === "shortlet" ||
+                      values.offer === ""
+                    }
                   >
                     Sale Price
                     {/* <Field
