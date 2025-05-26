@@ -789,6 +789,9 @@
         "constituency_name": "Matungulu",
 
         "wards": [
+          "Joska",
+          "Kamulu",
+          "Kantafu",
           "Tala",
           "Matungulu North",
           "Matungulu East",
@@ -1538,7 +1541,13 @@
       {
         "constituency_name": "Kitui West",
 
-        "wards": ["Mutonguni", "Kauwi", "Matinyani", "Kwa Mutonga/Kithum Ula"]
+        "wards": [
+          "Mutonguni",
+          "Kauwi",
+          "Matinyani",
+          "Kwa Mutonga/Kithum Ula",
+          "Kabati Town"
+        ]
       },
       {
         "constituency_name": "Kitui Central",
