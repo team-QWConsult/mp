@@ -431,6 +431,31 @@
         ]
       },
       {
+        "constituency_name": "Kiambu",
+        "wards": [
+          "Kiambu Town Centre",
+          "Ndumberi",
+          "Kanunga",
+          "Ting’ang’a",
+          "Kihingo",
+          "Kihara",
+          "Riabai",
+          "Kagongo",
+          "Kirigiti",
+          "Cianda",
+          "Kamuchege",
+          "Githunguri Road Area",
+          "Kibichoi",
+          "Muchatha",
+          "Ruaka",
+          "Banana Hill",
+          "Kawaida",
+          "Karuri",
+          "Kikuyu Ndumberi Road Estate",
+          "Kiamumbi"
+        ]
+      },
+      {
         "constituency_name": "Kabete",
         "wards": [
           "Kabete",
@@ -453,8 +478,115 @@
           "Kanjeru",
           "Muthurwa (Kabete)",
           "Muguga",
-          "Kabete Technical Area",
-          "Karura Forest Outskirts (Kiambu border side)"
+          "Kabete Technical Area"
+        ]
+      },
+      {
+        "constituency_name": "Thika",
+        "wards": [
+          "Thika Town Centre",
+          "Section 9",
+          "Landless",
+          "Biafra Estate",
+          "Makongeni",
+          "Gatuanyaga",
+          "Pilot Estate",
+          "Thika Greens",
+          "Muthaiga Estate (Thika)",
+          "Ziwani Estate",
+          "Kiganjo",
+          "Ngoingwa",
+          "Mugo Kibiru",
+          "Kimathi Estate",
+          "Happy Valley",
+          "Gatumaini",
+          "Kiandutu",
+          "Salama Estate",
+          "Karibaribi",
+          "Mangu",
+          "Maguguni",
+          "Ngoliba",
+          "Munyu",
+          "Kiboko Estate",
+          "Kamenu",
+          "Kiganjo Corner",
+          "Majengo (Thika)"
+        ]
+      },
+      {
+        "constituency_name": "Githunguri",
+        "wards": [
+          "Githunguri Town",
+          "Kimathi",
+          "Kambaa",
+          "Gathangari",
+          "Ikinu",
+          "Kagwe",
+          "Kanjai",
+          "Ngaita",
+          "Komothai",
+          "Gitwe",
+          "Kiria",
+          "Nthimbiri",
+          "Matioli",
+          "Nyanduma",
+          "Kibichoi",
+          "Rioki",
+          "Karatu",
+          "Kieni",
+          "Kang'angi",
+          "Gathaithi",
+          "Mukunike",
+          "Ndumberi"
+        ]
+      },
+      {
+        "constituency_name": "Limuru",
+        "wards": [
+          "Limuru Town",
+          "Kabuku",
+          "Tigoni",
+          "Ngecha",
+          "Rironi",
+          "Zambezi",
+          "Uplands",
+          "Ndeiya",
+          "Kamandura",
+          "Kwa Mbira",
+          "Mutarakwa",
+          "Lari",
+          "Manguo",
+          "Bibirioni",
+          "Ngecha Tigoni",
+          "Thigio",
+          "Mabroukie",
+          "Makutano",
+          "Nyambari",
+          "Raini"
+        ]
+      },
+      {
+        "constituency_name": "Kikuyu",
+        "wards": [
+          "Kikuyu Town Centre",
+          "Ondiri",
+          "Zambezi",
+          "Gikambura",
+          "Muguga",
+          "Kinoo",
+          "Uthiru",
+          "Thogoto",
+          "Karai",
+          "Nachu",
+          "Sigona",
+          "Kamangu",
+          "Kamara",
+          "Muthiga",
+          "Lusigetti",
+          "Kanyariri",
+          "Rungiri",
+          "Ndumboini",
+          "Nderi"
         ]
       },
       {
@@ -486,6 +618,32 @@
           "Mwalimu Farm",
           "Mwiki",
           "Mwihoko"
+        ]
+      },
+      {
+        "constituency_name": "Lari",
+        "wards": [
+          "Lari Town",
+          "Kinale",
+          "Nyambari",
+          "Uplands",
+          "Kagwe",
+          "Kambaa",
+          "Gitithia",
+          "Kiria-ini",
+          "Mbau-ini",
+          "Kimende",
+          "Mutarakwa",
+          "Mageria",
+          "Mukinyo",
+          "Githirioni",
+          "Mawingo",
+          "Kereita",
+          "Kamburu",
+          "Gatamaiyu",
+          "Magina",
+          "Gachoire",
+          "Kijabe"
         ]
       },
       {
