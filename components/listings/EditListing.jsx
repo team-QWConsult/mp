@@ -36,6 +36,7 @@ import {
   getAreas,
   getSubCounties,
 } from "../../lib/getLocationOptions";
+import BoostOptions from "./BoostOptions";
 // import ImagesUpload from "./ImagesUpload";
 
 const EditListing = ({ listing = {} }) => {
@@ -135,7 +136,7 @@ const EditListing = ({ listing = {} }) => {
             </div>
           </div>
           <div className="mb-4 rounded-md bg-white p-6">
-            <h4 className="uppercase mb-3">Share this:</h4>
+            <h4 className="uppercase mb-3">Promote on social media:</h4>
             <SocialShare
               description={listing?.description}
               title={listing.marketing_title || listingTitle}
@@ -145,6 +146,10 @@ const EditListing = ({ listing = {} }) => {
                 kebabCase(listing.town_suburb) || kebabCase(listing.region)
               }-${listing.id}`}
             />
+          </div>
+          <div className="mb-4 rounded-md bg-white p-6">
+            <h4 className="uppercase mb-3">Boost Options:</h4>
+            <BoostOptions listing={listing} />
           </div>
         </>
       )}
