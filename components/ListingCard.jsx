@@ -5,6 +5,7 @@ import React from "react";
 import { Image } from "react-feather";
 import WhatsAppIcon from "./widgets/WhatsAppIcon";
 import { attributes as settings } from "../content/settings.md";
+import { SITE_URL } from "../utils/constants";
 
 const ListingCard = ({ data }) => {
   const featuredImg =
@@ -104,7 +105,7 @@ const ListingCard = ({ data }) => {
                 Details
               </Link>
               <a
-                href={`https://wa.me/${settings.phone}`}
+                href={`https://wa.me/${settings.phone}?text=I am interested in your property listing: ${title} - ${SITE_URL}${slug}`}
                 className="px-6 py-2.5 text-sm uppercase rounded text-center inline-flex items-center gap-2 mt-6 bg-primary text-white rounded-tr-xl"
               >
                 <WhatsAppIcon className="h-4 w-auto fill-white" />

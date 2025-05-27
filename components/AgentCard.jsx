@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Mail, Phone, User, X } from "react-feather";
 import WhatsAppIcon from "./widgets/WhatsAppIcon";
 import { attributes as settings } from "../content/settings.md";
+import { SITE_URL } from "../utils/constants";
+import { upperCase } from "lodash";
 
 export default function AgentCard({
   title = "",
@@ -60,9 +62,12 @@ export default function AgentCard({
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href={`https://wa.me/${settings.phone}?text=${encodeURIComponent(
-              "I am interested in your property: Ref - " + listingRef
-            )}`}
+            href={`https://wa.me/${
+              settings.phone
+            }?text=I am interested in your property: Ref ${upperCase(
+              listingRef.split("-").pop()
+            )} - ${SITE_URL}/properties/${listingRef}
+            `}
             className="flex items-center justify-center rounded-sm mb-2 text-black px-6 py-3 w-full text-center bg-gold hover:bg-charcoal hover:text-white"
           >
             <WhatsAppIcon className="h-5 mr-3" />
