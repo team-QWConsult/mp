@@ -70,7 +70,7 @@ export default function ListingsPage() {
                 <div>
                   <h3 className="mb-2 font-bold">{i.marketing_title}</h3>
                   <span className="block mb-2">
-                    KSH{" "}
+                    {i.price_unit}{" "}
                     {i.offer === "sale"
                       ? (i.sale_price || 0).toLocaleString()
                       : (i.rent_price || 0).toLocaleString()}
