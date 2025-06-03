@@ -29,10 +29,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <PageLoading />
-      {/* <Component {...pageProps} /> */}
-      <div className="fixed inset-0 bg-white z-100 flex items-center justify-center">
-        <span>Offline</span>
-      </div>
+      <Component {...pageProps} />
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=`}
