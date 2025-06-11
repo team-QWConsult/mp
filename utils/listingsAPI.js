@@ -1,9 +1,10 @@
 import { NEXT_PUBLIC_TEAM_ID, SITE_URL } from "./constants";
 import _, { includes, kebabCase } from "lodash";
+import listingsData from "../listings.json";
 
 export async function listingsAPI(req) {
   try {
-    let listings = await getListings();
+    let listings = listingsData;
     let query = req.query || {};
     let listingCount;
 

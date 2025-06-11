@@ -2,15 +2,26 @@ const fs = require("fs");
 const { join } = require("path");
 
 const NEXT_PUBLIC_TEAM_ID = "HCjGvDga5nPpRufVWSZf";
+const SITE_URL = "https://mapemaproperties.com";
+
+async function getListings() {
+  let listings = [];
+  try {
+    const res = await fetch(`${SITE_URL}/api/get-listings`);
+    const dataData = await res.json();
+    if (dataData.success) {
+      listings = dataData.data;
+    }
+  } catch (err) {
+    console.log(err);
+  }
+
+  return listings;
+}
 
 async function listingsAPI() {
   try {
-    const dataFromGCP = await fetch(
-      `https://storage.googleapis.com/pro-sync-ke.appspot.com/${NEXT_PUBLIC_TEAM_ID}-properties.json`
-    );
-    const data = await dataFromGCP.json();
-
-    let listings = [...data.listings];
+    let listings = await getListings();
 
     console.log("Found " + listings.length + " listings");
 
