@@ -6,7 +6,7 @@
     "dev": "next dev",
     "predev": "node scripts/get-data && node scripts/get-listings",
     "build": "next build",
-    "prebuild": "node scripts/get-listings",
+    "prebuild": "node scripts/get-data && node scripts/get-listings",
     "start": "next start",
     "lint": "next lint"
   },
