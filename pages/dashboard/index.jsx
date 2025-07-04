@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "../../components/Nav";
 import Link from "next/link";
-import { Layers, Plus, Settings } from "react-feather";
+import { Layers, LogOut, Plus, Settings } from "react-feather";
 import Breadcrumbs from "../../components/widgets/Breadcrumbs";
 import Footer from "../../components/Footer";
 import { useRouter } from "next/router";
