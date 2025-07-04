@@ -4,8 +4,18 @@ import Link from "next/link";
 import { Layers, Plus, Settings } from "react-feather";
 import Breadcrumbs from "../../components/widgets/Breadcrumbs";
 import Footer from "../../components/Footer";
+import { useRouter } from "next/router";
 
 export default function Dashboard() {
+  const router = useRouter();
+  const handleLogout = () => {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("auth");
+    }
+
+    router.push("/"); // Redirect to home page or login page
+  };
+
   return (
     <main className="bg-gray-200">
       <Nav />
@@ -42,6 +52,15 @@ export default function Dashboard() {
             <span className="block w-full">Website Settings</span>
           </div>
         </Link>
+        <button
+          onClick={handleLogout}
+          className="h-[200px] rounded bg-white p-4 flex items-center justify-center hover:ring"
+        >
+          <div className="text-center">
+            <LogOut className="h-12 w-auto inline-block mb-3" />
+            <span className="block w-full">Logout</span>
+          </div>
+        </button>
       </div>
       <Footer />
     </main>

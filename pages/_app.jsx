@@ -3,6 +3,7 @@ import PageLoading from "../components/widgets/PageLoading";
 import "../styles/globals.css";
 import Script from "next/script";
 import { attributes as settings } from "../content/settings.md";
+import AuthWrapper from "../components/listings/AuthWrapper";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -28,8 +29,10 @@ function MyApp({ Component, pageProps }) {
           href="/favicon-16x16.png"
         />
       </Head>
-      <PageLoading />
-      <Component {...pageProps} />
+      <AuthWrapper>
+        <PageLoading />
+        <Component {...pageProps} />
+      </AuthWrapper>
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=`}
