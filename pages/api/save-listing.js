@@ -1,5 +1,6 @@
 import { Redis } from "@upstash/redis";
 import { customAlphabet } from "nanoid";
+import { downloadAndParseJsonBlob, uploadJsonBlob } from "../../utils/jsonDB";
 
 const redis = new Redis({
   url: process.env.UPSTASH_REDIS_REST_URL,
@@ -19,21 +20,11 @@ const submitHandler = async (req, res) => {
   const id = nanoid(5);
 
   // Insert data into Upstash redis
+  const listings = await downloadAndParseJsonBlob();
+  const newListing = { id, ...data };
+  listings.push(newListing);
 
-  try {
-    //Store the survey data
-    await redis.hset(`${id}`, data);
-
-    //Store the id of the survey to retrieve it later
-    await redis.sadd("entries", `${id}`);
-  } catch (error) {
-    console.error("Failed to insert data into redis", error);
-
-    return res.status(500).json({
-      success: false,
-      message: "Failed to insert data into redis",
-    });
-  }
+  await uploadJsonBlob(listings);
 
   return res.status(200).json({
     success: true,

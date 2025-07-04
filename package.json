@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "predev": "node scripts/get-data && node scripts/get-listings",
+    "removedpredev": "node scripts/get-data && node scripts/get-listings",
     "build": "next build",
     "prebuild": "node scripts/get-data && node scripts/get-listings",
     "start": "next start",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@react-input/number-format": "^2.0.3",
     "@upstash/redis": "^1.32.0",
+    "@vercel/blob": "^1.1.1",
     "animate.css": "^4.1.1",
     "cloudinary": "^2.2.0",
     "date-fns": "^2.29.3",
