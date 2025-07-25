@@ -1,10 +1,14 @@
 import { NEXT_PUBLIC_TEAM_ID, SITE_URL } from "./constants";
 import _, { includes, kebabCase } from "lodash";
 import listingsData from "../listings.json";
+import listingsDataBackup from "../listings-backup-new.json";
 
 export async function listingsAPI(req) {
   try {
-    let listings = listingsData;
+    let listings =
+      listingsData && listingsData.length > 0
+        ? listingsData
+        : listingsDataBackup;
     let query = req.query || {};
     let listingCount;
 
@@ -143,9 +147,12 @@ export async function listingsAPI(req) {
 
 export async function getListingByID(listingID) {
   try {
-    let listings = await getListings();
+    let listings =
+      listingsData && listingsData.length > 0
+        ? listingsData
+        : listingsDataBackup;
 
-    let listing = _.find(listings, { id: listingID });
+    let listing = _.find(listings, (l) => l.id.toString() === listingID);
 
     return { listing };
   } catch (error) {

@@ -54,7 +54,7 @@ export default function PropertyPage({ data }) {
 
   const features = getStructuredFeatures(listing.features || []);
   const topLinks = createTopLinks(
-    listing.offer,
+    listing.offer === "lease" ? "rent" : listing.offer,
     listing.town_suburb || listing.region
   );
 
@@ -418,7 +418,7 @@ const DetailsCard = ({ title, value = "-" }) => (
 );
 
 export async function getStaticPaths() {
-  const data = await listingsAPI();
+  const data = await listingsAPI({});
 
   const paths = data.listings.map((i) => ({
     params: {
