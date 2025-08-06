@@ -1,8 +1,10 @@
+import { API_ENDPOINT } from "./constants";
+
 export default async function deleteListing(id) {
   if (!id) return;
 
   try {
-    await fetch(`/api/listings/${id}`, {
+    await fetch(`${API_ENDPOINT}/properties/${id}`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

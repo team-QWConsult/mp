@@ -5,6 +5,7 @@ import Footer from "../../../components/Footer";
 import Link from "next/link";
 import { Edit, Edit3, Trash } from "react-feather";
 import LoadingSpinner from "../../../components/widgets/LoadingSpinner";
+import { API_ENDPOINT } from "../../../utils/constants";
 
 export default function ListingsPage() {
   const [loading, setLoading] = useState(true);
@@ -13,11 +14,11 @@ export default function ListingsPage() {
   useEffect(() => {
     async function fetchListings() {
       setLoading(true);
-      let res = await fetch("/api/get-listings");
+      let res = await fetch(`${API_ENDPOINT}/properties/all?company_id=2`);
       let fetchedListings = await res.json();
 
-      if (fetchedListings.success) {
-        setListings(fetchedListings.data);
+      if (fetchedListings) {
+        setListings(fetchedListings);
       }
       setLoading(false);
     }

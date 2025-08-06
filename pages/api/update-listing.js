@@ -1,10 +1,4 @@
-import { Redis } from "@upstash/redis";
-import { nanoid } from "nanoid";
-
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN,
-});
+import { API_ENDPOINT } from "../../utils/constants";
 
 const updateHandler = async (req, res) => {
   const { id } = req.query;
@@ -13,17 +7,19 @@ const updateHandler = async (req, res) => {
   if (!id || !data)
     return res.status(400).json({ error: "BAD_REQUEST", status: "ERROR" });
 
-  try {
-    // Update the survey data
-    await redis.hset(id, data);
-  } catch (error) {
-    console.error("Failed to update data in redis", error);
+  const apiRes = await fetch(`${API_ENDPOINT}/properties/${id}`, {
+    body: JSON.stringify({
+      ...data,
+    }),
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    method: "PUT",
+  });
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to update data in redis",
-    });
-  }
+  const d = await apiRes.json();
+  console.log(d.message);
 
   return res.status(200).json({
     success: true,

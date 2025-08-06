@@ -1,10 +1,4 @@
-import { Redis } from "@upstash/redis";
-import { nanoid } from "nanoid";
-
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN,
-});
+import { API_ENDPOINT } from "../../../utils/constants";
 
 export default async function handler(req, res) {
   const { id } = req.query;
@@ -17,16 +11,16 @@ export default async function handler(req, res) {
     let data;
     try {
       // Fetch the survey data
-      data = await redis.hgetall(id);
+      let serverRestponse = await fetch(`${API_ENDPOINT}/properties/${id}`, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
 
-      if (!data || Object.keys(data).length === 0) {
-        return res.status(404).json({
-          success: false,
-          message: "Data not found",
-        });
-      }
+      data = serverRestponse.json();
     } catch (error) {
-      console.error("Failed to fetch data from redis", error);
+      console.error("Failed to fetch data", error);
 
       return res.status(500).json({
         success: false,
@@ -49,9 +43,21 @@ export default async function handler(req, res) {
 
     try {
       // Update the survey data
-      await redis.hset(id, data);
+      const apiRes = await fetch(`${API_ENDPOINT}/properties/${id}`, {
+        body: JSON.stringify({
+          ...data,
+        }),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        method: "PUT",
+      });
+
+      const d = await apiRes.json();
+      console.log(d.message);
     } catch (error) {
-      console.error("Failed to update data in redis", error);
+      console.error("Failed to update data", error);
 
       return res.status(500).json({
         success: false,
@@ -69,12 +75,15 @@ export default async function handler(req, res) {
   if (req.method === "DELETE") {
     try {
       // Delete the survey data
-      await redis.del(id);
-
-      // Remove the id from the entries set
-      await redis.srem("entries", id);
+      await fetch(`${API_ENDPOINT}/properties/${id}`, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        method: "DELETE",
+      });
     } catch (error) {
-      console.error("Failed to delete data from redis", error);
+      console.error("Failed to delete data", error);
 
       return res.status(500).json({
         success: false,

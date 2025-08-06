@@ -1,14 +1,13 @@
-import { NEXT_PUBLIC_TEAM_ID, SITE_URL } from "./constants";
+import { data } from "autoprefixer";
+import { API_ENDPOINT, NEXT_PUBLIC_TEAM_ID, SITE_URL } from "./constants";
 import _, { includes, kebabCase } from "lodash";
-import listingsData from "../listings.json";
-import listingsDataBackup from "../listings-backup-new.json";
 
 export async function listingsAPI(req) {
   try {
-    let listings =
-      listingsData && listingsData.length > 0
-        ? listingsData
-        : listingsDataBackup;
+    let listings = await getListings();
+
+    console.log(listings.length);
+
     let query = req.query || {};
     let listingCount;
 
@@ -147,10 +146,7 @@ export async function listingsAPI(req) {
 
 export async function getListingByID(listingID) {
   try {
-    let listings =
-      listingsData && listingsData.length > 0
-        ? listingsData
-        : listingsDataBackup;
+    let listings = await getListings();
 
     let listing = _.find(listings, (l) => l.id.toString() === listingID);
 
@@ -165,10 +161,11 @@ export async function getListingByID(listingID) {
 export async function getListings() {
   let listings = [];
   try {
-    const res = await fetch(`${SITE_URL}/api/get-listings`);
+    const res = await fetch(`${API_ENDPOINT}/properties/all?company_id=2`);
     const dataData = await res.json();
-    if (dataData.success) {
-      listings = dataData.data;
+
+    if (dataData && dataData.length) {
+      listings = dataData;
     }
   } catch (err) {
     console.log(err);

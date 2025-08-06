@@ -1,7 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { kebabCase, snakeCase, upperFirst } from "lodash";
+import { isNumber, isString, kebabCase, snakeCase, upperFirst } from "lodash";
 import SectionTitle from "../widgets/SectionTitle";
+import { customAlphabet } from "nanoid";
+
+const nanoid = customAlphabet("1234567890abcdefghijklmopqrstuvwxyz", 5);
 
 import {
   floorSizeUnitOptions,
@@ -48,7 +51,9 @@ const EditListing = ({ listing = {} }) => {
 
   function formatNumber(value) {
     if (!value) return "";
-    const number = parseFloat(value.replace(/,/g, ""));
+    const number = isNumber(value)
+      ? value
+      : parseFloat(value.replace(/,/g, ""));
     if (isNaN(number)) return "";
     return number.toLocaleString();
   }
@@ -66,20 +71,27 @@ const EditListing = ({ listing = {} }) => {
         // edit doc
         let dataToSave = {
           ...data,
-          updated_at: new Date().toString(),
+          pets_allowed: data.pets_allowed === "yes" ? true : false,
+          company_id: 2,
         };
-        updateListing(dataToSave, listing.id);
+        console.log(dataToSave);
+
+        await updateListing(dataToSave, listing.id);
 
         setLoading(false);
         setSuccess(true);
       } else {
         // create new
+        const id = nanoid(5);
+
         let dataToSave = {
           ...data,
-          created_at: new Date().toString(),
-          updated_at: new Date().toString(),
+          pets_allowed: data.pets_allowed === "yes" ? true : false,
+          custom_id: id,
+          company_id: 2,
         };
         await saveListing(dataToSave);
+
         setLoading(false);
         setSuccess(true);
       }
@@ -161,7 +173,15 @@ const EditListing = ({ listing = {} }) => {
         <div className="add-property">
           <div className="add-property-container">
             <Formik
-              initialValues={{ ...initialValues, ...listing }}
+              initialValues={{
+                ...initialValues,
+                ...Object.fromEntries(
+                  Object.entries(listing).map(([k, v]) => [
+                    k,
+                    v === null ? "" : v,
+                  ])
+                ),
+              }}
               enableReinitialize
               onSubmit={async (values, { setSubmitting }) => {
                 // remove empty values and unchanged values

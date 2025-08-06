@@ -5,6 +5,7 @@ import Footer from "../../../components/Footer";
 import EditListing from "../../../components/listings/EditListing";
 import { useRouter } from "next/router";
 import LoadingSpinner from "../../../components/widgets/LoadingSpinner";
+import { API_ENDPOINT } from "../../../utils/constants";
 
 export default function ListingsPage() {
   const router = useRouter();
@@ -39,14 +40,12 @@ const EditListingWrapper = ({ listingID }) => {
   useEffect(() => {
     async function fetchListing() {
       setLoading(true);
-      let res = await fetch(`/api/listings/${listingID}`);
+      let res = await fetch(`${API_ENDPOINT}/properties/${listingID}`);
       let fetchedListing = await res.json();
-      console.log(fetchedListing);
 
-      setData(fetchedListing.data);
+      setData(fetchedListing);
       setLoading(false);
     }
-    console.log(listingID);
 
     if (listingID) {
       fetchListing();

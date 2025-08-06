@@ -2,12 +2,12 @@ const fs = require("fs");
 const { join } = require("path");
 
 const NEXT_PUBLIC_TEAM_ID = "HCjGvDga5nPpRufVWSZf";
-const SITE_URL = "https://mapemaproperties.com";
+const SITE_URL = "https://listings.mapemaproperties.com";
 
 async function getListings() {
   let listings = [];
   try {
-    const res = await fetch(`${SITE_URL}/api/get-listings`);
+    const res = await fetch(`${SITE_URL}/api/v1/properties/all?company_id=2`);
     const dataData = await res.json();
     if (dataData.success) {
       listings = dataData.data;

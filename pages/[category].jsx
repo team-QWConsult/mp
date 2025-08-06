@@ -126,11 +126,6 @@ export async function getServerSideProps({ params, query, req }) {
     const data = await listingsAPI({});
     listings = data.listings;
 
-    // sort by date in field "created_at._seconds"
-    listings = listings.sort(
-      (a, b) => b.created_date._seconds - a.created_date._seconds
-    );
-
     let queryFromUrl = getQueryFromUrl(params.category);
     console.log(queryFromUrl);
 
