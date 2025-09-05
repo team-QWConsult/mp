@@ -43,6 +43,8 @@ const ListingCard = ({ data }) => {
           <img
             src={featuredImg.secure_url}
             alt={title}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover group-hover:scale-110 duration-500 rounded rounded-tr-3xl"
           />
         </div>

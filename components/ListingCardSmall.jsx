@@ -35,6 +35,8 @@ const ListingCard = ({ data }) => {
               <img
                 src="/img/bedroom.png"
                 alt="bedrooms"
+                loading="lazy"
+                decoding="async"
                 className="h-7 w-auto mr-2 group-hover:invert"
               />
               <span className="text-base">{data.bedroom_count || "-"}</span>

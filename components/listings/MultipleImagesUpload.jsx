@@ -7,7 +7,8 @@ const MultipleImagesUpload = ({ form, field }) => {
   const [imgError, setImgError] = useState(false);
   const maxUploads = 50;
 
-  const resizeImage = (file, maxWidth) => {
+  // Add watermark after resizing
+  const resizeAndWatermarkImage = (file, maxWidth) => {
     return new Promise((resolve) => {
       const reader = new FileReader();
       reader.onload = (event) => {
@@ -26,11 +27,36 @@ const MultipleImagesUpload = ({ form, field }) => {
           canvas.width = width;
           canvas.height = height;
 
+          // Draw the base image
           ctx.drawImage(img, 0, 0, width, height);
 
-          canvas.toBlob((blob) => {
-            resolve(blob);
-          }, file.type);
+          // --- Add watermark text (bottom right) ---
+          const watermarkText = "Mapema Properties"; // customize
+          ctx.font = "20px Arial";
+          ctx.fillStyle = "rgba(255, 255, 255, 0.6)"; // semi-transparent white
+          ctx.textAlign = "right";
+          ctx.fillText(watermarkText, width - 10, height - 10);
+
+          // --- Add watermark image (top left) ---
+          const watermark = new Image();
+          watermark.src = "/logo.jpg"; // path to your logo in public folder
+          watermark.onload = () => {
+            const w = 100; // logo width
+            const h = (watermark.height / watermark.width) * w;
+            ctx.save();
+            ctx.globalAlpha = 0.7; // set opacity
+            ctx.drawImage(watermark, 10, 10, w, h); // top left corner with 10px padding
+            ctx.restore();
+            canvas.toBlob((blob) => {
+              resolve(blob);
+            }, file.type);
+          };
+          watermark.onerror = () => {
+            // fallback: just text watermark
+            canvas.toBlob((blob) => {
+              resolve(blob);
+            }, file.type);
+          };
         };
         img.src = event.target.result;
       };
@@ -51,7 +77,7 @@ const MultipleImagesUpload = ({ form, field }) => {
     setLoading(true);
 
     const uploadPromises = Array.from(event.target.files).map(async (file) => {
-      const resizedFile = await resizeImage(file, 720);
+      const resizedFile = await resizeAndWatermarkImage(file, 720);
 
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
