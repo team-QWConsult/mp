@@ -19,6 +19,14 @@ const FeaturedProperties = ({ properties }) => {
           <ListingCard key={i.id} data={i} />
         ))}
       </div>
+      <div className="flex justify-center mt-10">
+        <Link
+          href="/properties"
+          className="px-5 py-3 rounded bg-primary text-white flex items-center gap-2"
+        >
+          View All Listings <ArrowUpRight size={16} />
+        </Link>
+      </div>
     </section>
   );
 };

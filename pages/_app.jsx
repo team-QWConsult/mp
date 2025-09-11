@@ -35,20 +35,20 @@ function MyApp({ Component, pageProps }) {
       </AuthWrapper>
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=`}
+        src="https://www.googletagmanager.com/gtag/js?id=AW-17134312120"
       />
       <Script
         id="gtag-init"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
-                      window.dataLayer = window.dataLayer || [];
-                      function gtag(){dataLayer.push(arguments);}
-                      gtag('js', new Date());
-                      gtag('config', '', {
-                      page_path: window.location.pathname,
-                      });
-                    `,
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17134312120', {
+              page_path: window.location.pathname,
+            });
+          `,
         }}
       />
     </>

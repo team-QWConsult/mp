@@ -35,6 +35,13 @@ export default function PropertyPage({ data }) {
   const [showSlider, setShowSlider] = useState(false);
   const [showMore, setShowMore] = useState(false);
   const [focusAgent, setFocusAgent] = useState(false);
+  React.useEffect(() => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-17134312120/RVu3CPm83JYbELi1o-o_",
+      });
+    }
+  }, []);
 
   let listing;
 
