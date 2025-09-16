@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }) {
       </AuthWrapper>
       <Script
         strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=AW-17134312120"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-11512447042"
       />
       <Script
         id="gtag-init"
@@ -45,7 +45,7 @@ function MyApp({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'AW-17134312120', {
+            gtag('config', 'AW-11512447042', {
               page_path: window.location.pathname,
             });
           `,
