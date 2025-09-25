@@ -342,14 +342,14 @@ export default function PropertyPage({ data }) {
                 </div>
               )}
             </section>
-            <BookViewingForm
+            {/* <BookViewingForm
               id={listing.source_ref || router.query.propertySlug}
               link={`${
                 process.env.NEXT_PUBLIC_SITE_URL || SITE_URL
               }/properties/${listing.property_type}-for-${data.offer}-at-${
                 kebabCase(listing.town_suburb) || kebabCase(listing.region)
               }-${router.query.propertySlug}`}
-            />
+            /> */}
             {listing.offer === "sale" && (
               <MorgageCalculator homeValue={listing.sale_price || 0} />
             )}
@@ -378,7 +378,7 @@ export default function PropertyPage({ data }) {
                 <span>Enquire</span>
               </button>
               <button
-                onClick={handleClickViewing}
+                onClick={() => setFocusAgent(true)}
                 className="group px-6 py-2.5 w-full bg-white uppercase rounded-sm flex items-center mt-2 text-black"
               >
                 <Calendar className="mr-4" />

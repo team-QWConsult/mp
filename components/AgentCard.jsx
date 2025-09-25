@@ -77,7 +77,7 @@ export default function AgentCard({
             href={`mailto:${settings.email}?subject=${encodeURIComponent(
               "I am interested in your property: Ref - " + listingRef
             )}&body=${encodeURIComponent(
-              "Please contact me about your listing"
+              `Please contact me about your listing - ${SITE_URL}/properties/${listingRef}`
             )}`}
             className="flex items-center justify-center rounded-sm mb-2 text-black px-6 py-3 w-full text-center bg-gold hover:bg-charcoal hover:text-white"
           >
