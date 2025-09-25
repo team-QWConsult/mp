@@ -43,7 +43,7 @@ export default function AgentCard({
         </div>
         <img
           alt="Mapema properties"
-          src="/logo.png"
+          src="/logo.jpg"
           className="w-[100px] h-[100px] object-cover mx-auto rounded-full flex items-center justify-center text-white bg-slate-700"
         />
 

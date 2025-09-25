@@ -4,7 +4,7 @@ import includes from "lodash/includes";
 
 import { attributes as baseSEO } from "../content/seo.md";
 
-const SEO = ({ img = "/img/land-2.jpg", title, description, slug }) => {
+const SEO = ({ img = "/og-image.jpg", title, description, slug }) => {
   return (
     <Head>
       <title>{title ? `${title} - ${baseSEO.title}` : baseSEO.title}</title>
