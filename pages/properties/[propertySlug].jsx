@@ -61,7 +61,7 @@ export default function PropertyPage({ data }) {
 
   const features = getStructuredFeatures(listing.features || []);
   const topLinks = createTopLinks(
-    listing.offer === "lease" ? "rent" : listing.offer,
+    listing.offer === "sale" ? "sale" : "rent",
     listing.town_suburb || listing.region
   );
 
