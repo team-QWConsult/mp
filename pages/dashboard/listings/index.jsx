@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Edit, Edit3, Trash } from "react-feather";
 import LoadingSpinner from "../../../components/widgets/LoadingSpinner";
 import { API_ENDPOINT } from "../../../utils/constants";
+import { formatDistance } from "date-fns";
 
 export default function ListingsPage() {
   const router = useRouter();
@@ -134,12 +135,21 @@ export default function ListingsPage() {
                 />
                 <div>
                   <h3 className="mb-2 font-bold">{i.marketing_title}</h3>
-                  <span className="block mb-2">
-                    {i.price_unit}{" "}
-                    {i.offer === "sale"
-                      ? (i.sale_price || 0).toLocaleString()
-                      : (i.rent_price || 0).toLocaleString()}
-                  </span>
+                  <div className="flex gap-4 flex-wrap">
+                    <span className="text-primary">ID: # {i.id}</span>
+                    <span>
+                      {formatDistance(new Date(i.created_at), new Date(), {
+                        addSuffix: true,
+                      })}
+                    </span>
+                    <span className="block mb-2">
+                      {i.price_unit}{" "}
+                      {i.offer === "sale"
+                        ? (i.sale_price || 0).toLocaleString()
+                        : (i.rent_price || 0).toLocaleString()}
+                    </span>
+                  </div>
+
                   <div className="flex items-center gap-4">
                     <button className="flex items-center p-2 px-6 rounded-full border gap-3">
                       <Edit3 />

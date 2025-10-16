@@ -6,6 +6,7 @@ import { Image } from "react-feather";
 import WhatsAppIcon from "./widgets/WhatsAppIcon";
 import { attributes as settings } from "../content/settings.md";
 import { SITE_URL } from "../utils/constants";
+import { formatDistance } from "date-fns";
 
 const ListingCard = ({ data }) => {
   const featuredImg =
@@ -49,7 +50,7 @@ const ListingCard = ({ data }) => {
           />
         </div>
       </Link>
-      <div className="absolute top-[280px] left-3 z-10 flex gap-2">
+      <div className="absolute top-[280px] right-3 z-10 flex gap-2">
         <div className=" bg-gray-600/50 rounded-sm p-1 uppercase text-white flex items-center">
           <Image className="h-4 mr-1" />
           <span className="mr-1">{(data.images || []).length}</span>
@@ -57,6 +58,11 @@ const ListingCard = ({ data }) => {
         <div className=" bg-gray-600/50 rounded-sm p-1 px-2 uppercase text-white flex items-center">
           <span>{data.property_type}</span>
         </div>
+      </div>
+      <div className="absolute top-[284px] left-3 rounded-sm p-1 px-2 text-sm capitalize bg-black/30 text-white">
+        {formatDistance(new Date(data.created_at), new Date(), {
+          addSuffix: true,
+        })}
       </div>
       <div className=" inset-0 flex items-end">
         <div className="bg-white block rounded-b p-5 w-full group-hover:h-full transition-all duration-300">

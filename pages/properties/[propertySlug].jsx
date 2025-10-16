@@ -171,6 +171,9 @@ export default function PropertyPage({ data }) {
                 </span>
               </div> */}
             </div>
+            <div className="mb-4">
+              <span className="text-primary">Listing Ref: # {listing.id}</span>
+            </div>
             <article
               style={showMore ? { height: "auto" } : { height: 240 }}
               className="text-gray-700 text-xl overflow-y-hidden"
@@ -198,7 +201,7 @@ export default function PropertyPage({ data }) {
               </h2>
               <div className="h-1 bg-gold w-32 mt-3"></div>
               <div className="w-full mt-6">
-                <DetailsCard title="Property Ref" />
+                <DetailsCard title="Property Ref" value={`# ${listing.id}`} />
                 <DetailsCard
                   title="Property Status"
                   value={`For ${listing.offer}`}
