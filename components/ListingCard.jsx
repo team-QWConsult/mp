@@ -67,7 +67,10 @@ const ListingCard = ({ data }) => {
       <div className=" inset-0 flex items-end">
         <div className="bg-white block rounded-b p-5 w-full group-hover:h-full transition-all duration-300">
           <Link href={slug}>
-            <span className="text-3xl font-semibold">
+            <h2 className="text-2xl mb-4 font-bold">
+              {data.marketing_title || title}
+            </h2>
+            <span className="text-lg font-semibold">
               {data.price_unit} {price ? price.toLocaleString() : "0"}
             </span>
             <span className="text-sm uppercase block mt-2 text-slate-600">
