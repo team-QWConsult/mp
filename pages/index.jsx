@@ -39,7 +39,10 @@ export async function getStaticProps(context) {
   // fetch listings
   let listings = [];
   try {
-    const data = await listingsAPI({});
+    const data = await listingsAPI({query:{
+      featured: true,
+      published: true
+    }});
     listings = data.listings;
 
     //return the most recent 6
